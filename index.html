@@ -1,9 +1,391 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Symbol | Visual Designer</title>
+    <meta name="description"
+        content="Portfolio of Dash Symbol, a Visual Designer based in Tulsa, OK. Specializing in branding, UI layout, and digital design.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
-    <h1>Hello World</h1>
-    <p>This is my hosted GitHub page.</p>
+    <a href="#main-content" class="skip-link" data-i18n="skip_link">Skip to main content</a>
+
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#hero" class="logo">Dash Symbol<span class="dot">.</span></a>
+
+            <nav class="nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                    <li><a href="#about" data-i18n="nav_about">About</a></li>
+                    <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                    <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button id="lang-toggle" class="lang-btn" aria-label="Switch Language">
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="divider">/</span>
+                <span class="lang-opt" data-lang="es">ES</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section id="hero" class="section hero">
+            <div class="container hero-content">
+                <p class="hero-intro" data-i18n="hero_intro">Hello, I am</p>
+                <h1 class="hero-name">Dash Symbol</h1>
+                <h2 class="hero-title" data-i18n="hero_title">Visual Designer</h2>
+                <p class="hero-tagline" data-i18n="hero_tagline">Crafting digital experiences with precision, clarity,
+                    and purpose.</p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" data-i18n="btn_projects">View Projects</a>
+                    <a href="./assets/Dash-Symbol-Resume.pdf" class="btn btn-outline" target="_blank"
+                        data-i18n="btn_resume">Download Resume</a>
+                    <a href="mailto:p.dashielsanchez@gmail.com" class="btn btn-ghost" data-i18n="btn_email">Email Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title" data-i18n="section_projects">Featured Projects</h2>
+                    <div class="section-line"></div>
+                </header>
+
+                <div class="grid projects-grid">
+                    <!-- Project 1 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=800&auto=format&fit=crop"
+                                alt="Branding Project" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_branding">Branding</span>
+                            <h3 class="card-title" data-i18n="p1_title">Apex Architecture</h3>
+                            <p class="card-desc" data-i18n="p1_desc">A complete identity refresh for a modern
+                                architectural firm, focusing on structural typography and minimalism.</p>
+                            <div class="card-tags">
+                                <span>Illustrator</span><span>InDesign</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                                alt="UI Dashboard Dashboard" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_ui">UI Design</span>
+                            <h3 class="card-title" data-i18n="p2_title">Lumina Dashboard</h3>
+                            <p class="card-desc" data-i18n="p2_desc">Designed a comprehensive analytics dashboard for
+                                solar energy monitoring with dark mode support.</p>
+                            <div class="card-tags">
+                                <span>Figma</span><span>Prototyping</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b7993143a2d?q=80&w=800&auto=format&fit=crop"
+                                alt="Packaging Design" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_packaging">Packaging</span>
+                            <h3 class="card-title" data-i18n="p3_title">Botanica Brews</h3>
+                            <p class="card-desc" data-i18n="p3_desc">Label design and packaging system for an organic
+                                coffee roastery based in the Pacific Northwest.</p>
+                            <div class="card-tags">
+                                <span>Photoshop</span><span>Print</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop"
+                                alt="Abstract Motion Art" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_motion">Motion</span>
+                            <h3 class="card-title" data-i18n="p4_title">Kinetic Type Series</h3>
+                            <p class="card-desc" data-i18n="p4_desc">An exploration of expressive typography through
+                                motion, created for a digital arts exhibition.</p>
+                            <div class="card-tags">
+                                <span>After Effects</span><span>Cinema 4D</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1543163521-1ea8a10527c5?q=80&w=800&auto=format&fit=crop"
+                                alt="Editorial Layout" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_editorial">Editorial</span>
+                            <h3 class="card-title" data-i18n="p5_title">Vantage Magazine</h3>
+                            <p class="card-desc" data-i18n="p5_desc">Layout and art direction for a quarterly lifestyle
+                                publication, emphasizing white space and typography.</p>
+                            <div class="card-tags">
+                                <span>InDesign</span><span>Layout</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="card project-card reveal">
+                        <div class="card-image-wrap">
+                            <img src="https://images.unsplash.com/photo-1572044162444-ad6021194360?q=80&w=800&auto=format&fit=crop"
+                                alt="City Icons" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-category" data-i18n="proj_cat_illustration">Illustration</span>
+                            <h3 class="card-title" data-i18n="p6_title">City Icons</h3>
+                            <p class="card-desc" data-i18n="p6_desc">A set of vector icons representing landmark
+                                buildings in Tulsa, used for local tourism guides.</p>
+                            <div class="card-tags">
+                                <span>Illustrator</span><span>Vector</span>
+                            </div>
+                            <a href="#" class="card-link disabled" aria-disabled="true" data-i18n="link_case_study">View
+                                Case Study</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="section gallery">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title" data-i18n="section_gallery">Visual Gallery</h2>
+                    <div class="section-line"></div>
+                </header>
+
+                <div class="grid gallery-grid">
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 1">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=400&auto=format&fit=crop"
+                            alt="Abstract Geo" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_1">Abstract Geo</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 2">
+                        <img src="https://images.unsplash.com/photo-1550684847-75bdda21cc95?q=80&w=400&auto=format&fit=crop"
+                            alt="Neon Type" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_2">Neon Type</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 3">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop"
+                            alt="Print Mockup" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_3">Print Mockup</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 4">
+                        <img src="https://images.unsplash.com/photo-1634152962454-cd653add74e3?q=80&w=400&auto=format&fit=crop"
+                            alt="Dark UI" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_4">Dark UI</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 5">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=400&auto=format&fit=crop"
+                            alt="3D Render" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_5">3D Render</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 6">
+                        <img src="https://images.unsplash.com/photo-1614850523060-8da1d56ae167?q=80&w=400&auto=format&fit=crop"
+                            alt="Icon Set" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_6">Icon Set</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 7">
+                        <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f74d?q=80&w=400&auto=format&fit=crop"
+                            alt="Color Study" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_7">Color Study</figcaption>
+                        </div>
+                    </figure>
+                    <figure class="gallery-item reveal" aria-label="Visual exploration 8">
+                        <img src="https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?q=80&w=400&auto=format&fit=crop"
+                            alt="Poster Art" loading="lazy">
+                        <div class="gallery-caption-overlay">
+                            <figcaption data-i18n="gallery_cap_8">Poster Art</figcaption>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section about">
+            <div class="container about-container">
+                <div class="about-content reveal">
+                    <h2 class="section-title" data-i18n="section_about">About Me</h2>
+
+                    <div class="about-text">
+                        <p data-i18n="about_p1">I am a multidisciplinary visual designer with a passion for minimal
+                            aesthetics and functional design. My work bridges the gap between structured typography and
+                            fluid creativity.</p>
+                        <p data-i18n="about_p2">With over 5 years of experience in both digital and print mediums, I
+                            help brands communicate their values through clarity and intention. I believe that good
+                            design is invisible—it just works.</p>
+                        <p class="about-location"><span class="icon">📍</span> <span
+                                data-i18n="about_location">Currently based in Tulsa, OK.</span></p>
+                    </div>
+                </div>
+                <!-- Profile Image / Abstract -->
+                <div class="about-visual reveal" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop"
+                        alt="Abstract Portrait">
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title" data-i18n="section_skills">Tools & Skills</h2>
+                </header>
+
+                <div class="skills-wrapper reveal">
+                    <span class="pill">Figma</span>
+                    <span class="pill">Adobe Illustrator</span>
+                    <span class="pill">Photoshop</span>
+                    <span class="pill">InDesign</span>
+                    <span class="pill">After Effects</span>
+                    <span class="pill">Prototyping</span>
+                    <span class="pill">User Interface</span>
+                    <span class="pill">Design Systems</span>
+                    <span class="pill">Typography</span>
+                    <span class="pill">Blender</span>
+                    <span class="pill">Procreate</span>
+                    <span class="pill">Brand Strategy</span>
+                    <span class="pill">Layout Design</span>
+                    <span class="pill">Print Production</span>
+                    <span class="pill">Wireframing</span>
+                    <span class="pill">HTML/CSS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="section partially-gray">
+            <div class="container">
+                <header class="section-header reveal">
+                    <h2 class="section-title" data-i18n="section_testimonials">Testimonials</h2>
+                </header>
+
+                <div class="grid testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <blockquote data-i18n="quote_1">"Dash has an incredible eye for detail. The rebranding project
+                            completely revitalized our customer perception."</blockquote>
+                        <cite>
+                            <span class="name">Sarah Jenkins</span>
+                            <span class="role" data-i18n="role_1">Marketing Director, Apex Arch</span>
+                        </cite>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <blockquote data-i18n="quote_2">"Professional, timely, and bilingual skills were a huge asset
+                            for our international campaign launch."</blockquote>
+                        <cite>
+                            <span class="name">Carlos Mendez</span>
+                            <span class="role" data-i18n="role_2">Product Lead, Lumina Tech</span>
+                        </cite>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <blockquote data-i18n="quote_3">"The designs were clean, modern, and exactly what we needed.
+                            Highly recommended for any UI work."</blockquote>
+                        <cite>
+                            <span class="name">Emily Chen</span>
+                            <span class="role" data-i18n="role_3">Founder, StartUp flow</span>
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact">
+            <div class="container contact-content reveal">
+                <h2 class="contact-title" data-i18n="contact_title">Let's Work Together</h2>
+                <p class="contact-text" data-i18n="contact_text">Open to full-time roles and collaborations. If you have
+                    a project in mind, feel free to reach out.</p>
+
+                <a href="mailto:p.dashielsanchez@gmail.com"
+                    class="btn btn-primary contact-btn">p.dashielsanchez@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-info">
+                <strong>Dash Symbol</strong>
+                <span>Tulsa, OK</span>
+                <a href="mailto:p.dashielsanchez@gmail.com">p.dashielsanchez@gmail.com</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="Behance">Behance</a>
+                <a href="#" aria-label="Dribbble">Dribbble</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="year">2024</span> Dash Symbol. <span data-i18n="footer_rights">All rights
+                    reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 
 </html>
