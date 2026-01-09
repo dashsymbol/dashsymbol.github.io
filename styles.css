@@ -49,6 +49,10 @@ body {
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 img,
 svg {
     display: block;
@@ -375,8 +379,10 @@ button {
 
 /* PROJECTS */
 .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Slightly wider minmax to encourage 3-up but fill 2-up on tablets */
+    gap: 2rem;
+    /* Tighter gap to help fit 3 */
 }
 
 .card {
@@ -384,11 +390,15 @@ button {
     border-radius: 12px;
     overflow: hidden;
     transition: all var(--transition-smooth);
+    cursor: pointer;
 }
 
-.card:hover {
+.card:hover,
+.card:focus-visible {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    outline: none;
+    border-color: var(--color-primary);
 }
 
 .card-image-wrap {
@@ -458,13 +468,13 @@ button {
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    /* removed underline default */
     border-bottom: 1px solid var(--color-text);
     padding-bottom: 2px;
     transition: color 0.2s, border-color 0.2s;
+    display: inline-block;
 }
 
-.card-link:hover {
+.card:hover .card-link {
     color: var(--color-primary);
     border-color: var(--color-primary);
 }
@@ -718,6 +728,285 @@ button {
     width: 100%;
 }
 
+/* MODAL STYLES */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-container {
+    position: relative;
+    background: var(--color-bg);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    border-radius: 16px;
+    overflow-y: auto;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal[aria-hidden="false"] .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: white;
+    color: var(--color-primary);
+}
+
+.modal-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .modal-container {
+        overflow: hidden;
+        /* Scroll in body part only if needed */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal-content-grid {
+        grid-template-columns: 1.5fr 1fr;
+        height: 100%;
+    }
+}
+
+/* CAROUSEL */
+.modal-carousel {
+    background: #000;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Placeholder panel for missing images */
+.carousel-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f5f9;
+    color: var(--color-text-muted);
+}
+
+.carousel-fallback::before {
+    content: "Image Placeholder";
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.carousel-fallback::after {
+    content: "assets/projects/...";
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 2;
+    pointer-events: none;
+    /* Let clicks pass through except buttons */
+}
+
+.carousel-btn {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-indicator {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* MODAL RIGHT SIDE */
+.modal-body {
+    padding: 3rem 2.5rem;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+@media (min-width: 900px) {
+    .modal-body {
+        max-height: 90vh;
+    }
+}
+
+.modal-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--color-text);
+}
+
+.modal-section {
+    margin-bottom: 2rem;
+}
+
+.modal-section h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+.modal-section p {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.modal-tags li {
+    font-size: 0.8rem;
+    background: var(--color-bg-alt);
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    color: var(--color-text);
+}
+
+.modal-list {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.modal-list li {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -738,5 +1027,18 @@ button {
 
     .hero::before {
         animation: none;
+    }
+
+    .modal {
+        transition: none;
+    }
+
+    .modal-container {
+        transition: none;
+        transform: none;
+    }
+
+    .carousel-slide {
+        transition: none;
     }
 }
